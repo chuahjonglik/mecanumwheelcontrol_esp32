@@ -198,15 +198,16 @@ void loop() {
   int rotation = RightShoulder - LeftShoulder;
   Serial.printf("LeftX = %d LeftY = %d Rotation = %d ", LeftX, LeftY, rotation);
   // Omniwheel kinematics (Original)
-  // int frontLeft = LeftY + LeftX + rotation;
-  // int frontRight = LeftY - LeftX - rotation;
-  // int rearLeft = LeftY - LeftX + rotation;
-  // int rearRight = LeftY + LeftX - rotation;
-
-  int frontLeft = LeftY + LeftX - rotation;
+  int frontLeft = LeftY + LeftX + rotation;
   int frontRight = LeftY - LeftX - rotation;
-  int rearLeft = -LeftY + LeftX - rotation;
-  int rearRight = LeftY + LeftX + rotation;
+  int rearLeft = LeftY - LeftX + rotation;
+  int rearRight = LeftY + LeftX - rotation;
+
+  // These equations are not the correct one but were used due to wrong wiring setup
+  // int frontLeft = LeftY + LeftX - rotation;
+  // int frontRight = LeftY - LeftX - rotation;
+  // int rearLeft = -LeftY + LeftX - rotation;
+  // int rearRight = LeftY + LeftX + rotation;
 
   // Normalize motor speeds
   int maxSpeed = max(max(abs(frontLeft), abs(frontRight)), max(abs(rearLeft), abs(rearRight)));
