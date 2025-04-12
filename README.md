@@ -3,7 +3,7 @@ Mecanum wheel control on ESP32 using Bluepad controller.
 
 # Versions
 - Without PID
-- With PID
+- With PID (PID contants need to be tuned manually)
 
 # Details
 - Microcontroller: ESP32
