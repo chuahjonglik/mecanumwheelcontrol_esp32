@@ -12,6 +12,15 @@ Mecanum wheel control on ESP32 using Bluepad controller.
 - Tools: Arduino IDE
 - Libraries: Bluepad32 (for all versions), PID_v1, ICM20948_WE (only for PID version)
 
+## What You Should Know
+Mecanum wheels move to any direction using diagonal forces. The wheel should be setup in correct way. The easier way is by observing the pattern, the wheels' pattern should looks like a cross.
+
+To move forward or backward, the sideway forces should cancel each other, thus leaving only forward forces. This means that the resultant force should point to one direction only. This works the same for sideway movements, but some forces may not fully cancel to allows movement in certain angles.
+
+To rotate, all the wheels will spin where left side wheels will spin in opposite direction to the right side wheels.
+
+For this code, you only need to observe the wheel rotation for front, left, right, back, and clockwise/anticlockwise rotate.
+
 ## What to Change
 
 **Pin definitions**
